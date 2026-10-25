@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">laborator4</string>
+    <string name="apasa">Apasa</string>
+    <string name="introduceti_numele">Introduceti numele</string>
+    <string name="esti_student">Esti student?</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">laborator 4 task</string>
+    
+    //cod adaugat pt lista de optiuni la Spinner in activity_formular_masina.xml
+    <string-array name="optiuni_caroserie">
+        <item>Sedan</item>
+        <item>SUV</item>
+        <item>HatchBack</item>
+        <item>Break</item>
+    </string-array>
+</resources>

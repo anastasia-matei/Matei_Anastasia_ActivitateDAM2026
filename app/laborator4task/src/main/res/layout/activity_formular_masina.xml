@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormularMasina">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_titlu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Formular Adaugare Masina"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="84dp"
+            tools:layout_editor_absoluteY="89dp" />
+
+        <EditText
+            android:id="@+id/et_marca"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:ems="10"
+            android:hint="Introduceti marca...(ex: Audi)"
+            android:inputType="text"
+            tools:layout_editor_absoluteX="45dp"
+            tools:layout_editor_absoluteY="138dp" />
+
+        <EditText
+            android:id="@+id/et_an"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:ems="10"
+            android:hint="Introduceti anul fabricatiei...(ex:2000)"
+            android:inputType="number"
+            tools:layout_editor_absoluteX="45dp"
+            tools:layout_editor_absoluteY="210dp" />
+
+        <EditText
+            android:id="@+id/et_pret"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:ems="10"
+            android:hint="Introduceti pretul in euro..."
+            android:inputType="numberDecimal"
+            tools:layout_editor_absoluteX="45dp"
+            tools:layout_editor_absoluteY="273dp" />
+
+        <CheckBox
+            android:id="@+id/cb_este_electrica"
+            android:layout_width="315dp"
+            android:layout_height="55dp"
+            android:text="Masina este electrica?"
+            tools:layout_editor_absoluteX="45dp"
+            tools:layout_editor_absoluteY="347dp" />
+
+        <Spinner
+            android:id="@+id/spn_caroserie"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:entries="@array/optiuni_caroserie" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/rg_combustibil">
+
+            <RadioButton
+                android:id="@+id/rb_benzina"
+                android:layout_width="98dp"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Benzina" />
+
+            <RadioButton
+                android:id="@+id/rb_diesel"
+                android:layout_width="88dp"
+                android:layout_height="wrap_content"
+                android:text="Diesel" />
+
+            <RadioButton
+                android:id="@+id/rb_hibrid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Hibrid" />
+
+            <RadioButton
+                android:id="@+id/rb_gpl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="GPL" />
+        </RadioGroup>
+
+        <Switch
+            android:id="@+id/sw_are_garantie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Are garantie valabila" />
+
+        <RatingBar
+            android:id="@+id/rb_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:stepSize="0.5" />
+
+        <Button
+            android:id="@+id/btn_salveaza"
+            android:layout_width="126dp"
+            android:layout_height="51dp"
+            android:onClick="salveazaMasina"
+            android:text="Salveaza"
+            tools:layout_editor_absoluteX="142dp"
+            tools:layout_editor_absoluteY="477dp" />
+
+
+    </LinearLayout>
+</ScrollView>
