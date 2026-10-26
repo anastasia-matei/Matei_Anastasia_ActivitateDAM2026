@@ -12,10 +12,15 @@ public class MasinaAuto implements Serializable {
     private boolean areGarantie;
     private String tipCombustibil;
     private float rating;
+    private int putere;
+    private String dataITP;
+    private String culoare;
+    private int an;
 
 
 
-    public MasinaAuto(String model, double pret, boolean areGarantie, String tipCombustibil, String marca, float rating, boolean esteElectrica) {
+
+    public MasinaAuto(String model, double pret, boolean areGarantie, String tipCombustibil, String marca, float rating, boolean esteElectrica, int putere, String dataITP, String culoare, int an) {
         this.model = model;
         this.pret = pret;
         this.areGarantie = areGarantie;
@@ -23,6 +28,10 @@ public class MasinaAuto implements Serializable {
         this.marca = marca;
         this.rating = rating;
         this.esteElectrica = esteElectrica;
+        this.putere = putere;
+        this.dataITP=dataITP;
+        this.culoare=culoare;
+        this.an=an;
     }
 
     public String getModel() {
@@ -74,13 +83,49 @@ public class MasinaAuto implements Serializable {
         this.esteElectrica = esteElectrica;
     }
 
+    public int getPutere() {
+        return putere;
+    }
+
+    public void setPutere(int putere) {
+        this.putere = putere;
+    }
+
+    public String getDataITP() {
+        return dataITP;
+    }
+
+    public void setDataITP(String dataITP) {
+        this.dataITP = dataITP;
+    }
+
+    public String getCuloare() {
+        return culoare;
+    }
+
+    public void setCuloare(String culoare) {
+        this.culoare = culoare;
+    }
+
+    public int getAn() {
+        return an;
+    }
+
+    public void setAn(int an) {
+        this.an = an;
+    }
+
     @Override
     public String toString() {
         return marca + " " + model + "\n" +
-                "-> Preț: " + pret + " EUR\n" +
+                "-> Pret: " + pret + " EUR\n" +
                 "-> Combustibil: " + tipCombustibil + "\n" +
-                "-> Electrică: " + (esteElectrica ? "Da" : "Nu") + "\n" +
-                "-> Garanție: " + (areGarantie ? "Da" : "Nu") + "\n" +
+                "-> An Fabricatie: " + an + "\n" +
+                "-> Putere: " + putere + " CP"+ "\n" +
+                "-> Electrica: " + (esteElectrica ? "Da" : "Nu") + "\n" +
+                "-> Data ITP: " + dataITP + "\n" +
+                "-> Garantie: " + (areGarantie ? "Da" : "Nu") + "\n" +
+                "-> Culoare: " + culoare + "\n"+
                 "-> Rating: " + rating + " / 5 ★";
     }
 }

@@ -57,7 +57,8 @@
             android:layout_height="55dp"
             android:text="Masina este electrica?"
             tools:layout_editor_absoluteX="45dp"
-            tools:layout_editor_absoluteY="347dp" />
+            tools:layout_editor_absoluteY="347dp"
+            android:textSize="16sp"/>
 
         <Spinner
             android:id="@+id/spn_caroserie"
@@ -99,11 +100,59 @@
                 android:text="GPL" />
         </RadioGroup>
 
+        <TextView
+            android:id="@+id/tv_label_putere"
+            android:layout_width="match_parent"
+            android:layout_height="26dp"
+            android:layout_marginTop="8dp"
+            android:text="Putere motor: 100 CP"
+            android:textSize="16sp" />
+
+        <!--sliderul (valoare max 500 CP, pornind de la 100)-->
+        <SeekBar
+            android:id="@+id/sb_putere"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="8dp"
+            android:max="600"
+            android:min="100" />
+
         <Switch
             android:id="@+id/sw_are_garantie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Are garantie valabila" />
+            android:text="Are garantie valabila"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data expirare ITP:"
+
+            android:textSize="16sp"
+            android:layout_marginTop="12dp"/>
+
+        <DatePicker
+            android:id="@+id/dp_itp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:datePickerMode="spinner"
+            android:calendarViewShown="false"
+            />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Culoare caroserie-> Tasteaza o culoare..."
+            android:textSize="16sp"/>
+
+        <AutoCompleteTextView
+            android:id="@+id/actv_culoare"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:completionThreshold="1"/>
 
         <RatingBar
             android:id="@+id/rb_rating"
@@ -121,6 +170,14 @@
             tools:layout_editor_absoluteX="142dp"
             tools:layout_editor_absoluteY="477dp" />
 
+        <Button
+            android:id="@+id/btn_reset_formular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Resetare"
+            app:backgroundTint="#D32F2F" />
 
     </LinearLayout>
 </ScrollView>
+
