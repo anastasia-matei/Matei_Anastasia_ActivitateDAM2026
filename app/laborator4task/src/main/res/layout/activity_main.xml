@@ -13,11 +13,17 @@
     <Button
         android:id="@+id/btn_deschide_formular"
         android:text="Adauga o masina"
-        android:onClick="deschideFormular"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
+
+    <Button
+        android:id="@+id/btn_vezi_lista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Vezi lista de masini salvate :)"
+    />
 
     <TextView
         android:id="@+id/tv_rezultat_masina"
@@ -28,7 +34,6 @@
 
         android:text="Nu ai adaugat nicio masina momentan!"
         android:textSize="16sp"
-        android:textStyle="bold"
-         />
+        android:textStyle="bold" />
 
 </LinearLayout>
