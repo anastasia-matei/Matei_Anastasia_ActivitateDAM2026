@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent it2=new Intent(getApplicationContext(), AfisareArrayListMasini.class);
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("cheieListaMasini", listaMasini);
+                bundle.putParcelableArrayList("cheieListaMasini", listaMasini);
                 it2.putExtras(bundle);
 
                 startActivity(it2);
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
             Bundle bundle = data.getExtras();
             if(bundle!=null){
-                MasinaAuto masina = (MasinaAuto) bundle.getSerializable("masinaAdaugata");
+                MasinaAuto masina = (MasinaAuto) bundle.getParcelable("masinaAdaugata");
                 if(masina!=null){
                     listaMasini.add(masina);//salvez in arrayList
 

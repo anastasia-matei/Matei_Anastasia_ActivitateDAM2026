@@ -124,6 +124,63 @@ public class FormularMasina extends AppCompatActivity {
                     Toast.makeText(FormularMasina.this, "Formularul a fost curatat cu succes!", Toast.LENGTH_SHORT).show();
                 }
         );
+
+        Intent intent = getIntent();
+        if (intent.hasExtra("masina_editata")) {
+            MasinaAuto masina = intent.getParcelableExtra("masina_editata");
+
+            if (masina != null) {
+                // 1. campurile simple de text
+                etMarca.setText(masina.getMarca());
+                etAn.setText(String.valueOf(masina.getAn()));
+                etPret.setText(String.valueOf(masina.getPret()));
+                actvCuloare.setText(masina.getCuloare());
+
+                // 2. CheckBox & Switch
+                cbEsteElectrica.setChecked(masina.isEsteElectrica());
+                swAreGarantie.setChecked(masina.isAreGarantie());
+
+                // 3. RatingBar & SeekBar
+                rbRating.setRating(masina.getRating());
+                sbPutere.setProgress(masina.getPutere());
+                putereSelectata = masina.getPutere();
+                tvPutere.setText("Putere motor: " + putereSelectata + " CP");
+
+                // 4. Spinner Caroserie (selectăm modelul salvat)
+                ArrayAdapter adapterCaroserie = (ArrayAdapter) spnCaroserie.getAdapter();
+                if (adapterCaroserie != null) {
+                    int pos = adapterCaroserie.getPosition(masina.getModel());
+                    if (pos >= 0) {
+                        spnCaroserie.setSelection(pos);
+                    }
+                }
+
+                // 5. RadioGroup Combustibil (bifăm opțiunea salvată)
+                String combustibil = masina.getTipCombustibil();
+                if ("Benzina".equalsIgnoreCase(combustibil)) {
+                    grCombustibil.check(R.id.rb_benzina);
+                } else if ("Diesel".equalsIgnoreCase(combustibil)) {
+                    grCombustibil.check(R.id.rb_diesel);
+                } else if ("Hibrid".equalsIgnoreCase(combustibil)) {
+                    grCombustibil.check(R.id.rb_hibrid);
+                } else if ("GPL".equalsIgnoreCase(combustibil)) {
+                    grCombustibil.check(R.id.rb_gpl);
+                }
+
+                // 6. DatePicker ITP (completăm data expirării)
+                if (masina.getDataITP() != null && masina.getDataITP().contains("/")) {
+                    String[] dataParts = masina.getDataITP().split("/");
+                    if (dataParts.length == 3) {
+                        try {
+                            int zi = Integer.parseInt(dataParts[0]);
+                            int luna = Integer.parseInt(dataParts[1]) - 1; // În DatePicker lunile încep de la 0
+                            int an = Integer.parseInt(dataParts[2]);
+                            dpITP.updateDate(an, luna, zi);
+                        } catch (NumberFormatException ignored) {}
+                    }
+                }
+            }
+        }
     }
 
     public void salveazaMasina(View view) {
@@ -243,7 +300,7 @@ public class FormularMasina extends AppCompatActivity {
         Intent it = new Intent();
         Bundle bundle = new Bundle();
 
-        bundle.putSerializable("masinaAdaugata", masinaNoua);
+        bundle.putParcelable("masinaAdaugata", masinaNoua);
         it.putExtras(bundle);
 
         setResult(RESULT_OK, it);

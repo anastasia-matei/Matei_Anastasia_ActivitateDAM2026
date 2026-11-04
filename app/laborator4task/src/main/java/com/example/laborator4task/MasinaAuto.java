@@ -1,10 +1,13 @@
 package com.example.laborator4task;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import androidx.annotation.NonNull;
 
 import java.io.Serializable;
 
-public class MasinaAuto implements Serializable {
+public class MasinaAuto implements Parcelable {
     private double pret;
     private String marca;
     private String model;
@@ -33,6 +36,33 @@ public class MasinaAuto implements Serializable {
         this.culoare=culoare;
         this.an=an;
     }
+
+    protected MasinaAuto(Parcel in) { //implementare pt Parcel
+        pret = in.readDouble();
+        marca = in.readString();
+        model = in.readString();
+        esteElectrica = in.readByte() != 0;
+        areGarantie = in.readByte() != 0;
+        tipCombustibil = in.readString();
+        rating = in.readFloat();
+        putere = in.readInt();
+        dataITP = in.readString();
+        culoare = in.readString();
+        an = in.readInt();
+    }
+
+    public static final Creator<MasinaAuto> CREATOR = new Creator<MasinaAuto>() {
+        @Override
+        public MasinaAuto createFromParcel(Parcel in) {
+            return new MasinaAuto(in);
+        }
+
+        @Override
+        public MasinaAuto[] newArray(int size) {
+            return new MasinaAuto[size];
+        }
+    };
+    //end implementare pr Parcel
 
     public String getModel() {
         return model;
@@ -127,5 +157,25 @@ public class MasinaAuto implements Serializable {
                 "-> Garantie: " + (areGarantie ? "Da" : "Nu") + "\n" +
                 "-> Culoare: " + culoare + "\n"+
                 "-> Rating: " + rating + " / 5 ★";
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeDouble(pret);
+        dest.writeString(marca);
+        dest.writeString(model);
+        dest.writeByte((byte) (esteElectrica ? 1 : 0));
+        dest.writeByte((byte) (areGarantie ? 1 : 0));
+        dest.writeString(tipCombustibil);
+        dest.writeFloat(rating);
+        dest.writeInt(putere);
+        dest.writeString(dataITP);
+        dest.writeString(culoare);
+        dest.writeInt(an);
     }
 }
