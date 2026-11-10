@@ -30,6 +30,7 @@ public class AdaugaInregistrare extends AppCompatActivity {
     private RadioGroup rgAnotimp;
     private RatingBar rbarRating;
     private Spinner spnLocatie;
+    private Button btnSave;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,17 +51,32 @@ public class AdaugaInregistrare extends AppCompatActivity {
         rbarRating=findViewById(R.id.rbar_rating);
         spnLocatie=findViewById(R.id.spn_locatii);
 
-        Button btnSave = findViewById(R.id.btn_salveaza_excursie);
+        btnSave = findViewById(R.id.btn_salveaza_excursie);
+        sbPret.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                int pret = progress;
+                tvPret.setText("Pretul per persoana este: "+pret+" RON");
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                //nimic
+            }
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                //nimic
+            }
+        });
         btnSave.setOnClickListener(v -> {
 
-            String destinatie = etDestinatie.toString().trim();
+            String destinatie = etDestinatie.getText().toString().trim();
             if(destinatie.isEmpty()){
                 etDestinatie.setError("Scrie boss destinatia!");
                 return;
             }
 
             int pret = sbPret.getProgress();
-            tvPret.setText("Pretul per persoana este: "+pret);
+
 
 
             boolean areBagajExtra;

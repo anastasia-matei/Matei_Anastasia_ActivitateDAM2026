@@ -62,29 +62,29 @@
         >
         <RadioButton
             android:id="@+id/rb_iarna"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Iarna"/>
         <RadioButton
             android:id="@+id/rb_primavara"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Primavara"/>
         <RadioButton
             android:id="@+id/rb_vara"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Vara"/>
         <RadioButton
             android:id="@+id/rb_toamna"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Toamna"/>
 </RadioGroup>
 
     <RatingBar
         android:id="@+id/rbar_rating"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:numStars="5"
         android:stepSize="1"

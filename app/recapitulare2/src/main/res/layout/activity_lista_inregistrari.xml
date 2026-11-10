@@ -8,12 +8,6 @@
     tools:context=".ListaInregistrari"
     android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/lv_lista_inregistrari"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"/>
-
     <Button
         android:id="@+id/btn_adauga"
         android:layout_width="match_parent"
@@ -30,5 +24,10 @@
         android:text="Iesi din aplicatie"
         android:textStyle="bold"
         android:textSize="18sp"/>
+    <ListView
+        android:id="@+id/lv_lista_inregistrari"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
 
 </LinearLayout>

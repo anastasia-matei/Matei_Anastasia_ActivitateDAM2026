@@ -57,7 +57,7 @@ public class ListaInregistrari extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode==101 && resultCode==RESULT_OK && data!=null){
+        if(requestCode==67 && resultCode==RESULT_OK && data!=null){
 //            Carte carte = (Carte) data.getParcelableExtra("carte_noua");
 //            if(carte!=null){
 //                tvRezultat.setText(carte.toString());
