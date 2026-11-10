@@ -22,6 +22,9 @@ public class MasinaAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
+        if (masini == null) {
+            return 0;
+        }
         return masini.size();
     }
 
@@ -29,6 +32,11 @@ public class MasinaAdapter extends BaseAdapter {
     public Object getItem(int position) {
         return masini.get(position);
     }
+    //sau mai detailed:
+//    if (masini != null && position >= 0 && position < masini.size()) {
+//        return masini.get(position);
+//    }
+//        return null;
 
     @Override
     public long getItemId(int position) {

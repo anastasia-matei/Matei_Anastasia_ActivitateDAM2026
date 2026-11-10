@@ -69,7 +69,7 @@ public class AfisareArrayListMasini extends AppCompatActivity {
 
 
         lvMasini.setOnItemClickListener((parent, view, position, id) -> {
-            idModificat = position; // Retinem pozitia masinii selectate
+            idModificat = position; // Retinem pozitia masinii selectate pt editare
 
             Intent intentModifica = new Intent(getApplicationContext(), FormularMasina.class);
             // Trimitem obiectul selectat prin Parcelable
@@ -117,6 +117,7 @@ public class AfisareArrayListMasini extends AppCompatActivity {
                     listaMasini.set(idModificat, masinaModificata);
 
                     //notific adapterul ca s-a schimbat sursa de date
+                    //mi se actualizeaza ce apare pe ecran, lista cu noile valori ale masinii, dupa editare
                     adapterPersonalizat.notifyDataSetChanged();
 
                     Toast.makeText(this, "Masina a fost modificata cu succes!", Toast.LENGTH_SHORT).show();

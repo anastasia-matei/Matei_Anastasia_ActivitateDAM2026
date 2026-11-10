@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">recapitulare2</string>
+    <string-array name="variante_locatii">
+        <item>Munte</item>
+        <item>Mare</item>
+        <item>Campie</item>
+    </string-array>
+</resources>

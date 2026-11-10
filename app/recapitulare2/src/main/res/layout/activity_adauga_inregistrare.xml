@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdaugaInregistrare"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Formular adaugare excursie"
+        android:textSize="20sp"/>
+
+
+    <EditText
+        android:id="@+id/et_destinatie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Spune-ne destinatia ta"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/tv_pret"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selecteaza pretul per persoana: "
+        android:textSize="16sp"/>
+    <SeekBar
+        android:id="@+id/sb_pret"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:min="100"
+        android:max="10000"
+        />
+
+    <CheckBox
+        android:id="@+id/cb_bagaj_extra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bifeaza daca ai bagaj extra: "/>
+
+    <Switch
+        android:id="@+id/sw_pensionar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bifeaza daca esti pensionar: "/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selecteaza anotimpul in care are loc excursia ta: "/>
+    <RadioGroup
+        android:id="@+id/rg_anotimp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <RadioButton
+            android:id="@+id/rb_iarna"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Iarna"/>
+        <RadioButton
+            android:id="@+id/rb_primavara"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Primavara"/>
+        <RadioButton
+            android:id="@+id/rb_vara"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vara"/>
+        <RadioButton
+            android:id="@+id/rb_toamna"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Toamna"/>
+</RadioGroup>
+
+    <RatingBar
+        android:id="@+id/rbar_rating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="1"
+/>
+
+    <Spinner
+        android:id="@+id/spn_locatii"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/variante_locatii"/>
+
+
+    <Button
+        android:id="@+id/btn_salveaza_excursie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salveaza excursia"/>
+
+
+
+
+
+
+</LinearLayout>
