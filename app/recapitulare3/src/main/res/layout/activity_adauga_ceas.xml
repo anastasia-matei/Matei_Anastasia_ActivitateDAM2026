@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdaugaCeas"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/tv_nume_formular_adaugare"
+        />
+
+
+    <EditText
+        android:id="@+id/et_idCeas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:hint="@string/et_id_ceas"
+    />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_producator"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        />
+    <RadioGroup
+        android:id="@+id/rg_producator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/rb_garmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rb_garmin"/>
+        <RadioButton
+            android:id="@+id/rb_apple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rb_apple"/>
+        <RadioButton
+            android:id="@+id/rb_xiaomi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rb_xiaomi"/>
+    </RadioGroup>
+
+
+    <TextView
+        android:id="@+id/tv_capacitateBaterie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:text="@string/tv_capacitate"
+        />
+    <SeekBar
+        android:id="@+id/sb_capacitateBaterie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:min="1"
+        android:max="100"/>
+
+    <CheckBox
+        android:id="@+id/ckb_areNFC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ckb_areNFC"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+    <Spinner
+        android:id="@+id/spn_materialCurea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/spn_materialCurea"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_rating"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+    <RatingBar
+        android:id="@+id/rbar_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="0.5"
+        />
+
+    <Button
+        android:id="@+id/btn_salveazaCeas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_salveaza"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+</LinearLayout>

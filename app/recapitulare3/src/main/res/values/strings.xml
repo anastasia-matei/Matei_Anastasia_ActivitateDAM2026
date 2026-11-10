@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">recapitulare3</string>
+    <string name="tv_nume_formular_adaugare">Formulare adaugare ceas</string>
+    <string name="et_id_ceas">Introdu idul ceasului tau...</string>
+    <string name="rb_garmin">Garmin</string>
+    <string name="rb_apple">Apple</string>
+    <string name="rb_xiaomi">Xiaomi</string>
+    <string name="tv_producator">Selecteaza producatorul ceasului de mai jos:</string>
+    <string name="tv_capacitate">Arata ne mai jso ce capacitate de baterie are ceasul tau: </string>
+    <string name="ckb_areNFC">Ceasul tau are NFC? Bifeaza daca DA! </string>
+
+    <string-array name="spn_materialCurea">
+        <item>Piele ecologica</item>
+        <item>Piele naturala</item>
+        <item>Plastic</item>
+    </string-array>
+
+    <string name="tv_rating">Ce rating ai da ceasului tau?</string>
+    <string name="tv_salveaza">Salveaza ceasul</string>
+    <string name="btn_adaugaCeas">Adauga un ceas nou</string>
+</resources>
