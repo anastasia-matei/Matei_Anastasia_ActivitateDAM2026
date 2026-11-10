@@ -51,6 +51,22 @@ public class AdaugaCeas extends AppCompatActivity {
         rbarRating = findViewById(R.id.rbar_rating);
         tvCapacitateBaterie=findViewById(R.id.tv_capacitateBaterie);
 
+        sbCapacitateBaterie.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                tvCapacitateBaterie.setText("Capacitatea bateriei este: "+progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
         btnSalvare.setOnClickListener(v -> {
             String idCeasText = etIdCeas.getText().toString().trim();
             if(idCeasText.isEmpty()){
@@ -66,6 +82,7 @@ public class AdaugaCeas extends AppCompatActivity {
             }
             RadioButton rbProducator = findViewById(idSelectat);
             String producator = rbProducator.getText().toString();
+
 
             int capacitate = sbCapacitateBaterie.getProgress();
             boolean areNFC = ckbAreNFC.isChecked();

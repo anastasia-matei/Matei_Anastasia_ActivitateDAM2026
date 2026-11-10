@@ -1,6 +1,8 @@
 package com.example.recapitulare3;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,8 +10,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.ArrayList;
+
 public class ListaCeasuriCustom extends AppCompatActivity {
 
+    private ListView lvCeasuri;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +25,15 @@ public class ListaCeasuriCustom extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        lvCeasuri = findViewById(R.id.lv_ceasuri);
+        Intent intent = getIntent();
+
+        ArrayList<Smartwatch>ceasuriPrimite = intent.getParcelableArrayListExtra("lista_ceasuri");
+        if (ceasuriPrimite == null) {
+            ceasuriPrimite = new ArrayList<>();
+        }
+        CeasAdapter adapter = new CeasAdapter(ListaCeasuriCustom.this, ceasuriPrimite);
+        lvCeasuri.setAdapter(adapter);
     }
 }

@@ -18,6 +18,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private Button btnAdauga;
+    private Button btnVeziListaCustom;
     private ArrayList<Smartwatch> listaCeasuri = new ArrayList<>();
 
     @Override
@@ -36,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
             Intent intentDeschidere = new Intent(MainActivity.this, AdaugaCeas.class);
             startActivityForResult(intentDeschidere, 101);
         });
+
+        btnVeziListaCustom=findViewById(R.id.btn_veziListaCustom);
+        btnVeziListaCustom.setOnClickListener(v -> {
+            Intent intentCustom = new Intent(MainActivity.this, ListaCeasuriCustom.class);
+            intentCustom.putParcelableArrayListExtra("lista_ceasuri", listaCeasuri);
+            startActivity(intentCustom);
+        });
+
     }
 
     @Override
