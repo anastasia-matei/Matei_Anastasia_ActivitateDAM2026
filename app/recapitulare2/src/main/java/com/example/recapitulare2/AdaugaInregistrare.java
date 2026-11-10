@@ -3,6 +3,7 @@ package com.example.recapitulare2;
 import android.content.Intent;
 import android.media.Rating;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -31,6 +32,7 @@ public class AdaugaInregistrare extends AppCompatActivity {
     private RatingBar rbarRating;
     private Spinner spnLocatie;
     private Button btnSave;
+    private int pozitieEditata=-1;//pt editare obiect la click pe el in listview in activ principala
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +70,6 @@ public class AdaugaInregistrare extends AppCompatActivity {
             }
         });
         btnSave.setOnClickListener(v -> {
-
             String destinatie = etDestinatie.getText().toString().trim();
             if(destinatie.isEmpty()){
                 etDestinatie.setError("Scrie boss destinatia!");
@@ -109,9 +110,54 @@ public class AdaugaInregistrare extends AppCompatActivity {
             Excursie excursie = new Excursie(destinatie, pret, areBagajExtra, ePensionar, anotimp, rating, locatie);
             Intent intent = new Intent();
             intent.putExtra("excursie_noua", excursie);
+            intent.putExtra("pozitie_editata", pozitieEditata);//asta pt partea de editare, trimitem pozitia inapoi
             setResult(RESULT_OK, intent);
             finish();
         });
+
+
+        //pt modul editare
+        //dupa toata treaba asta, in listenerul la btn salveaza, trimitem inapoi POZITIA la care s a editat
+        //dc nu a fost editat si doar creat, o sa aiba val -1 de mai sus, altfel o sa ne arate care excursie din listview a fost editata ca sa o updatam
+        Intent intentModifica = getIntent();
+        if(intentModifica.hasExtra("excursie_editata")){
+            Excursie excursieEditata = (Excursie) intentModifica.getParcelableExtra("excursie_editata");
+            pozitieEditata = intentModifica.getIntExtra("pozitie_editata", -1);
+
+            if(excursieEditata!=null){
+                etDestinatie.setText(excursieEditata.getDestinatie());
+                sbPret.setProgress(excursieEditata.getPretPerPersoana());
+                tvPret.setText("Pretul per persoana este: "+excursieEditata.getPretPerPersoana()+" RON");
+
+                cbBagajExtra.setChecked(excursieEditata.isBagajExtra());
+                swPensionar.setChecked(excursieEditata.isPensionar());
+
+                rbarRating.setRating(excursieEditata.getRating());
+
+                if("Iarna".equals(excursieEditata.getAnotimp())){
+                    rgAnotimp.check(R.id.rb_iarna);
+                }else if("Primavara".equals(excursieEditata.getAnotimp())){
+                    rgAnotimp.check(R.id.rb_primavara);
+                }else if("Vara".equals(excursieEditata.getAnotimp())){
+                    rgAnotimp.check(R.id.rb_vara);
+                }else if("Toamna".equals(excursieEditata.getAnotimp())){
+                    rgAnotimp.check(R.id.rb_toamna);
+                }
+
+                ArrayAdapter adapterLocatii = (ArrayAdapter) spnLocatie.getAdapter();
+                if(adapterLocatii!=null){
+                    int spinnerPos = adapterLocatii.getPosition(excursieEditata.getLocatie());
+                    spnLocatie.setSelection(spinnerPos);
+                }
+            }
+        }
+
+
+
+
+
+
+
     }
 
 

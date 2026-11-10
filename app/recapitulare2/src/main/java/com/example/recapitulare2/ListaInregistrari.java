@@ -51,6 +51,19 @@ public class ListaInregistrari extends AppCompatActivity {
                                 listaExcursii);
         ListView lvExcursii = findViewById(R.id.lv_lista_inregistrari);
         lvExcursii.setAdapter(adapter);
+
+
+        lvExcursii.setOnItemClickListener((parent, view, position, id)->{
+            //preiau obiectul selectat de la pozitia unde s a dat click
+            Excursie excursieSelectata = listaExcursii.get(position);
+
+            //deschid formularul, trimit excursia pe care s a dat click si pozitia ei in listView
+            Intent intent = new Intent(ListaInregistrari.this, AdaugaInregistrare.class);
+            intent.putExtra("excursie_editata", excursieSelectata);
+            intent.putExtra("pozitie_editata", position);
+
+            startActivityForResult(intent, 100);
+        });
     }
 
     @Override
@@ -68,6 +81,14 @@ public class ListaInregistrari extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
             }
         }
+        if(requestCode==100 &&resultCode==RESULT_OK&&data!=null){
+            int pozitie = data.getIntExtra("pozitie_editata", -1);
+            if(pozitie!=-1){//dc pozitia!=-1 adk index valid adica s a modificat o excursie din listview
 
+                Excursie excursie = (Excursie) data.getParcelableExtra("excursie_noua");
+                listaExcursii.set(pozitie, excursie);
+                adapter.notifyDataSetChanged();
+            }
+        }
     }
 }
