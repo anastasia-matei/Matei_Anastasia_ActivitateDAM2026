@@ -68,6 +68,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(it, 55);
             }
         });
+
+        Button btnVeziImagini = findViewById(R.id.btn_vezi_imagini_retea);
+        btnVeziImagini.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentRetea = new Intent(getApplicationContext(), ImaginiReteaActivity.class);
+                startActivity(intentRetea);
+            }
+        });
     }
 
 //    public void deschideFormular(View view) {

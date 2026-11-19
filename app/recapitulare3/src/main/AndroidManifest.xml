@@ -26,6 +26,10 @@
             android:name=".ListaCeasuriCustom"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ListaCeasuriStandard"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

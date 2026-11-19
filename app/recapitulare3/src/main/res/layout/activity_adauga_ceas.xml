@@ -108,5 +108,12 @@
         android:text="@string/tv_salveaza"
         android:textSize="16sp"
         android:textStyle="bold"/>
+    <Button
+        android:id="@+id/btn_inapoiMain2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="@string/btn_revin2"/>
 
 </LinearLayout>

@@ -29,6 +29,7 @@ public class AdaugaCeas extends AppCompatActivity {
     private Spinner spnMaterialCurea;
     private RatingBar rbarRating;
     private TextView tvCapacitateBaterie;
+    private Button btnrevin2;
 
 
     @Override
@@ -50,6 +51,7 @@ public class AdaugaCeas extends AppCompatActivity {
         spnMaterialCurea = findViewById(R.id.spn_materialCurea);
         rbarRating = findViewById(R.id.rbar_rating);
         tvCapacitateBaterie=findViewById(R.id.tv_capacitateBaterie);
+        btnrevin2=findViewById(R.id.btn_inapoiMain2);
 
         sbCapacitateBaterie.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -98,6 +100,10 @@ public class AdaugaCeas extends AppCompatActivity {
             bundle.putParcelable("ceas_nou", ceas);
             intentRezultat.putExtras(bundle);
             setResult(RESULT_OK, intentRezultat);
+            finish();
+        });
+
+        btnrevin2.setOnClickListener(v -> {
             finish();
         });
     }

@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnAdauga;
     private Button btnVeziListaCustom;
+    private Button btnVeziListaStd;
     private ArrayList<Smartwatch> listaCeasuri = new ArrayList<>();
 
     @Override
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
             startActivityForResult(intentDeschidere, 101);
         });
 
+        //pt fereastra cu custom adapter si item din listview personalizat
         btnVeziListaCustom=findViewById(R.id.btn_veziListaCustom);
         btnVeziListaCustom.setOnClickListener(v -> {
             Intent intentCustom = new Intent(MainActivity.this, ListaCeasuriCustom.class);
@@ -45,6 +47,14 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intentCustom);
         });
 
+
+        //pt fereastra cu list view simplu cu adapter standard
+        btnVeziListaStd = findViewById(R.id.btn_veziListaStandard);
+        btnVeziListaStd.setOnClickListener(v -> {
+            Intent intentStd = new Intent(MainActivity.this, ListaCeasuriStandard.class);
+            intentStd.putParcelableArrayListExtra("lista_ceasuri", listaCeasuri);
+            startActivity(intentStd);
+        });
     }
 
     @Override

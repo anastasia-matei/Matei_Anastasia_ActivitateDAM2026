@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">recapitulare4</string>
+    <string name="tvtitluformular">Formular adaugare pacient</string>
+    <string name="btndeschideformular">Deschide formular de adaugare</string>
+    <string name="codpacient">Introdu codul pacientului...</string>
+    <string name="sexfem">Feminin</string>
+    <string name="sexmasc">Masculin</string>
+    <string name="tvsex">Va rugam bifati sexul dvs</string>
+    <string name="tvgreutate">Selectati mai jos greutatea pacientului</string>
+    <string name="eurgenta">Bifati doar daca este urgenta!</string>
+    <string-array name="grupasanguina">
+        <item>A</item>
+        <item>B</item>
+        <item>AB</item>
+        <item>O</item>
+    </string-array>
+
+
+    <string name="id">Cod pacient: </string>
+    <string name="urgenta">E urgenta? </string>
+    <string name="da">DA</string>
+    <string name="nu">nu</string>
+    <string name="grupa">Grupa sanguina:</string>
+    <string name="nivel">Nivel durere: </string>
+    <string name="sex">Sex: </string>
+    <string name="greutate">Greutate: </string>
+    <string name="kg"> kg.</string>
+    <string name="deschidecustom"> Vezi listview custom</string>
+    <string name="deschidestd"> Vezi listview standard</string>
+</resources>

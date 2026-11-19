@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormularPacient"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/et_codpacient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/codpacient"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvsex"/>
+
+    <RadioGroup
+        android:id="@+id/rg_sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rb_sexfem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sexfem"/>
+        <RadioButton
+            android:id="@+id/rb_sexmasc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sexmasc"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_greutate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tvgreutate"/>
+    <SeekBar
+        android:id="@+id/sb_greutate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:min="1"
+        android:max="300"
+        />
+
+    <CheckBox
+        android:id="@+id/ckb_eurgenta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/eurgenta"/>
+
+    <Spinner
+        android:id="@+id/spn_grupasanguina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/grupasanguina"/>
+
+    <RatingBar
+        android:id="@+id/rbar_durere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="0.5"/>
+
+    <Button
+        android:id="@+id/btn_salvarepacient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Salveaza pacient"/>
+
+
+</LinearLayout>

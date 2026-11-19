@@ -7,6 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".ListaCeasuriCustom"
     android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_inapoiInMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_revin"
+        android:textStyle="bold"
+        android:textSize="16sp"
+    />
     <ListView
         android:id="@+id/lv_ceasuri"
         android:layout_width="match_parent"

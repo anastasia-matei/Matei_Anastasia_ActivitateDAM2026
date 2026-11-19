@@ -19,4 +19,10 @@
     <string name="tv_salveaza">Salveaza ceasul</string>
     <string name="btn_adaugaCeas">Adauga un ceas nou</string>
     <string name="btn_veziListaCustom">Vezi lista de ceasuri cu custom adapter</string>
+    <string name="btn_revin">Inapoi in activitatea principala</string>
+    <string name="btn_revin2">Inapoi in activitatea principala</string>
+
+    <string name="toast_ceas_selectat">Ai selectat ceasul: </string>
+    <string name="toast_capacitate_scazuta">Gata, s a scazut capacitatea bateriei cu 2% pt ceasul cu id:  </string>
+    <string name="btnlistastandard">Vezi lista de ceasuri cu standard adapter</string>
 </resources>
