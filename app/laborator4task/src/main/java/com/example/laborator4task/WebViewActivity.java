@@ -24,9 +24,11 @@ public class WebViewActivity extends AppCompatActivity {
             return insets;
         });
 
+
         Intent it = getIntent();
         String link = it.getStringExtra("link");
         WebView wv = findViewById(R.id.webView);
+
 
         wv.setWebViewClient(new WebViewClient());
         wv.getSettings().setJavaScriptEnabled(true);
